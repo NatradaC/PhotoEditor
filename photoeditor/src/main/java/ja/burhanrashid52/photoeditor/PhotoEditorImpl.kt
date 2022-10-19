@@ -95,6 +95,7 @@ internal class PhotoEditorImpl @SuppressLint("ClickableViewAccessibility") const
             )
         ) {
             inputTextView.text = inputText
+            inputTextView.tag = styleBuilder
             styleBuilder?.applyStyle(inputTextView)
             mGraphicManager.updateView(view)
         }
