@@ -48,8 +48,16 @@ internal class Text(
     override fun updateView(view: View?) {
         val textInput = mTextView?.text.toString()
         val currentTextColor = mTextView?.currentTextColor ?: 0
+        val typeface = mTextView?.typeface
+        val gravity = mTextView?.gravity ?: 0
         val photoEditorListener = mGraphicManager.onPhotoEditorListener
-        photoEditorListener?.onEditTextChangeListener(view, textInput, currentTextColor)
+        photoEditorListener?.onEditTextChangeListener(
+            view,
+            textInput,
+            currentTextColor,
+            typeface,
+            gravity
+        )
     }
 
     init {
