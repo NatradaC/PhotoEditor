@@ -58,18 +58,6 @@ dependencies {
     implementation "androidx.core:core-ktx:1.7.0"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-
-
-ext {
-    PUBLISH_GROUP_ID = 'com.burhanrashid52'
-    PUBLISH_VERSION = '2.0.0'
-    PUBLISH_ARTIFACT_ID = 'photoeditor'
-}
-
-apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
-repositories {
-    mavenCentral()
-}
 afterEvaluate {
     publishing {
         publications {
