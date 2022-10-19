@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'maven-publish'
 
 android {
 
@@ -68,4 +69,18 @@ ext {
 apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
 repositories {
     mavenCentral()
+}
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = "com.burhanrashid52"
+                artifactId = "photoeditor-ookbee"
+                version = "0.0.1"
+
+            }
+        }
+    }
 }
